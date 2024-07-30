@@ -4,3 +4,5 @@
 
 layout: default
 ---
+
+This is the index page of my personal site.
