@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/iconoir@6.0.0/dist/iconoir.min.css" rel="stylesheet">
+
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    {% include head-custom.html %}
+
+    <style>
+      a {
+        color: #658c2a;
+      }
+      a:hover {
+        color: #46621d;
+      }
+      .contact-icons a {
+        margin: 0 10px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include simple-menu.html %}
+
+    <div class="wrapper">
+      <header>
+        {% if site.logo %}
+          <img src="{{site.logo | relative_url}}" alt="Logo" style="border-radius: 50%;padding-bottom: 10px;" />
+        {% endif %}
+
+        <h1 style="text-align: center;"><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+
+        <p style="text-align: center; font-size: 1.2em;">{{ site.description | default: site.github.project_tagline }}</p>
+
+        <div class="contact-icons" style="text-align: center;">
+          <a target="_blank" href="tel:{{ site.telephone }}"><i class="fas fa-phone-alt"></i></a>
+          <a target="_blank" href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i></a>
+          <a target="_blank" href="https://github.com/{{ site.github }}"><i class="fab fa-github"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin }}"><i class="fab fa-linkedin"></i></a>
+          <a target="_blank" href="https://orcid.org/{{ site.orcid }}"><i class="fab fa-orcid"></i></a>
+          <a target="_blank" href="{{ site.cv | relative_url }}">CV</a>
+        </div>
+
+
+        {% if site.show_downloads %}
+        <ul class="downloads">
+          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
+          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
+        </ul>
+        {% endif %}
+      </header>
+      <section>
+      {{ content }}
+
+      </section>
+      <footer>
+        {% if site.github.is_project_page %}
+        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  </body>
+</html>

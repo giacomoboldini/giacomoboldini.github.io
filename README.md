@@ -9,3 +9,8 @@ Additional notes on [this](https://docs.github.com/en/pages/setting-up-a-github-
  - add `export GEM_HOME=$HOME/.gem` to `.bashrc` or `.zshrc`.
  - `bundle add webrick`
 
+Run:
+```
+bundle exec jekyll serve
+```
+
