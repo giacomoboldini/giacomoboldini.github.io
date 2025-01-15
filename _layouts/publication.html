@@ -1,0 +1,82 @@
+---
+layout: secondary
+---
+
+{% if post.tags and post.tags.size > 0 %}
+<a class="topic">{{ page.tags | join: '</a>&nbsp;&nbsp;<a class="topic">' }}</a><br/>
+{% endif %}
+
+<h1>{{ page.title }}</h1>
+
+Authors: {{ page.authors }}<br/>
+
+<venue>{{ page.venue }}</venue><br/>
+
+<small>{% if page.location %}{{ page.location }}, {% endif %}{{ page.when }}</small><br/>
+
+<small>{{ page.kind }}</small><br/>
+
+<br/>
+{{content}}
+
+<div class="divtable">
+  <table>
+    <tbody>
+{% if page.manuscript %}
+      <tr>
+      	<td><i class="fas fa-file-pdf"></i> Manuscript:</td>
+        <td><a href="{{ site.baseurl }}/papers/{{ page.manuscript }}">PDF</a></td>
+      </tr>
+{% endif %}
+{% if page.presentation %}
+      <tr>
+      	<td><i class="fas fa-file-powerpoint"></i> Presentation:</td>
+        <td><a href="{{ site.baseurl }}/slides/{{ page.presentation }}">Slides</a></td>
+      </tr>
+{% endif %}
+{% if page.relatedtalktitle and page.relatedtalk %}
+      <tr>
+      	<td><i class="fas fa-calendar-alt"></i> Conference talk:</td>
+      	{%- assign target_page = "/talks/_posts/" | append: page.relatedtalk -%}
+        {%- assign has_ext = page.relatedtalk | split: ".md" -%}
+        {%- if has_ext.size == 1 and has_ext[0] != page.relatedtalk -%}
+           {%- assign target_page = has_ext[0] -%}
+        {%- else -%}
+           {%- assign target_page = page.relatedtalk -%}
+        {%- endif -%}
+        <td><a href="{{ site.baseurl }}/talks/{{ target_page }}.html">{{ page.relatedtalktitle }}</a></td>
+      </tr>
+{% endif %}
+{% if page.projects %}
+	{% assign projectlist = '' | split: '' %}
+	{% for p in page.projects %}
+		{% assign matching = site.pages | where: "project", true | where: "projid", p %}
+		{% assign projectlist = projectlist | concat: matching %}
+	{% endfor %}
+	{% if projectlist.size > 0 %}
+	  <tr>
+      	<td><i class="fas fa-laptop-code"></i> Associated project{% if projectlist.size > 1 %}s{% endif %}:</td>
+        <td>
+		{% assign count = 0%}
+		{% for p in projectlist %}
+			{% assign count = count | plus: 1 %}
+<a href="{{ p.url }}">{{ p.title }}</a>{% if count < projectlist.size %}, {% endif %}
+		{% endfor %}</td>
+      </tr>
+	{% endif %}
+{% endif %}
+{% if page.confpage %}
+      <tr>
+      	<td><i class="fas fa-chalkboard-teacher"></i> Conference page:</td>
+        <td><a href="{{ page.confpage }}">Link</a></td>
+      </tr>
+{% endif %}
+{% if page.publishername and page.publisherpage %}
+      <tr>
+      	<td><i class="fas fa-atlas"></i> {{ page.publishername }} page:</td>
+        <td><a href="{{ page.publisherpage }}">Link</a></td>
+      </tr>
+{% endif %}
+    </tbody>
+  </table>
+</div>
