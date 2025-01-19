@@ -5,7 +5,9 @@
 layout: mylayout
 ---
 
-I am a Ph.D. student in Computer Science focusing on static analysis,
+## About me
+
+I am a PhD student in Computer Science focusing on static analysis,
 abstract interpretation, and program verification, with applications to
 low-level languages.
 My works (academic/personal/small-team) span topics such as parallel

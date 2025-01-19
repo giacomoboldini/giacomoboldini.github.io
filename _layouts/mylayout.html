@@ -7,8 +7,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/iconoir@6.0.0/dist/iconoir.min.css" rel="stylesheet">
 
+    <title>{{ site.title }}</title>
+    {% seo title=false %}
 
-    {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
 
     <!--[if lt IE 9]>
