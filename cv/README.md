@@ -15,4 +15,4 @@ The `awesome-cv.cls` file for the Awesome theme is sourced from
 My modifications include:
 - Adjustments based on [this unmerged pull request](https://github.com/posquit0/Awesome-CV/pull/539) to fix spacing issues (line 749).
 <!-- - Reordering to place the ORCID entry before LinkedIn (lines 530-541). -->
-- Break line before ORCID entry (line 540).
+- Break line before Linkedin entry (lines 533-534).
