@@ -1,12 +1,28 @@
+:root {
+    --primary-color: #658c2a;
+    --secondary-color: #46621d;
+    --body-color: #f4f4f4;
+    --text-color: #444444;
+    --big-screen: 960px;
+    --mid-screen: 720px;
+    --small-screen: 480px;
+}
+
 a {
-    color: #658c2a;
+    color: var(--primary-color);
 }
+
 a:hover {
-    color: #46621d;
+    color: var(--secondary-color);
 }
+
 .contact-icons a {
-    margin: 0 10px;
-    font-size: 20px;
+    margin: 0 5px;
+    font-size: 25px;
+}
+
+.cv-icon {
+    font-weight: bold;
 }
 
 venue {
@@ -24,19 +40,51 @@ img.profile {
     margin-bottom: 20px;
 }
 
+div.contact-icons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div.backlink {
+    padding-bottom: 10px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 50px 50px;
+    color: var(--text-color);
+    background-color: var(--body-color);
+}
+
+
 @media (max-width: 960px) {
     img.profile {
         width: 30%;
         height: auto;
         max-width: none;
     }
+
 }
 
-div.contact-icons {
-    text-align: center;
-    margin-bottom: 20px;
+div.wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+header {
+    width: 350px;
+}
+
+section {
+    width: calc(100% - 400px);
 }
 
 @media print, screen and (max-width: 960px) {
-    header { padding-right: 0; }
+    header { width: auto; padding-right: 0;}
+    section { width: 100%;}
+    body { padding: 20px 20px;}
 }
+
+
