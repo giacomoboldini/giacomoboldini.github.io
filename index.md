@@ -123,6 +123,16 @@ projects, exploring embedded systems, and delving into network systems.
         <small>09/2024 – On Going</small><br/>
     </li>
     <br />
+    <!-- Static Analysis Symposium 2025 -->
+    <li>
+        <span class="fa-li">•</span>
+        <strong>Committee Member</strong>, <em>Artifact Evaluation for the Static Analysis Symposium (SAS 2025)</em><br/>
+        <em>Remote - Event in Singapore</em><br/>
+        <small>2025</small><br/>
+        <ul>
+            <li><a href="https://2025.splashcon.org/committee/sas-2025-sas-artifact-sas-artifact-evaluation-committee" target="_blank">Committee details</a></li>
+        </ul>
+    </li>
     <!-- Lipari Summer School on Abstract Interpretation -->
     <li>
         <span class="fa-li">•</span>
