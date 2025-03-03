@@ -65,7 +65,7 @@ projects, exploring embedded systems, and delving into network systems.
 ## Experience
 <ul class="fa-ul">
 {% assign sorted_experiences = site.categories.experiences | sort: 'start' | reverse %}
-{% for post in sorted_experiences limit: 2%}
+{% for post in sorted_experiences limit: 6%}
     <li>
         {% if post.end and post.end != "-" %}
         <span class="fa-li">•</span>
