@@ -9,7 +9,7 @@ layout: mylayout
 
 I am a PhD student in Computer Science focusing on static analysis,
 abstract interpretation, and program verification, with applications to
-low-level languages.
+low-level languages (in particular, LLVM-IR).
 My works (academic/personal/small-team) span topics such as parallel
 computing, GPU programming, AI applied to source code analysis, and web
 development for small to mid-sized websites.
@@ -123,6 +123,16 @@ projects, exploring embedded systems, and delving into network systems.
         <small>09/2024 – On Going</small><br/>
     </li>
     <br />
+    <!-- Software Language Engineering 2025 -->
+    <li>
+        <span class="fa-li">•</span>
+        <strong>Committee Member</strong>, <em>Artifact Evaluation for the International Conference on Software Language Engineering (SLE 2025)</em><br/>
+        <em>Remote - Event in Koblenz, Germany</em><br/>
+        <small>2025</small><br/>
+        <ul>
+            <li><a href="https://www.sleconf.org/2025/ArtifactEvaluation.html" target="_blank">Artifact evaluation details link</a></li>
+        </ul>
+    </li>
     <!-- Static Analysis Symposium 2025 -->
     <li>
         <span class="fa-li">•</span>
@@ -130,7 +140,7 @@ projects, exploring embedded systems, and delving into network systems.
         <em>Remote - Event in Singapore</em><br/>
         <small>2025</small><br/>
         <ul>
-            <li><a href="https://2025.splashcon.org/committee/sas-2025-sas-artifact-sas-artifact-evaluation-committee" target="_blank">Committee details</a></li>
+            <li><a href="https://2025.splashcon.org/committee/sas-2025-sas-artifact-sas-artifact-evaluation-committee" target="_blank">Committee details link</a></li>
         </ul>
     </li>
     <!-- Lipari Summer School on Abstract Interpretation -->
