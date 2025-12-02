@@ -1,6 +1,6 @@
 ---
 layout: experience
-title: "Curricular Internship"
+title: "Intern (Curricular)"
 employer: "University of Parma"
 where: "Parma, Italy"
 desc: "Designed and implemented explainable machine learning methodologies in the context of source code similarity."

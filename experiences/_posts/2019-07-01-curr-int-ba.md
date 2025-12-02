@@ -1,6 +1,6 @@
 ---
 layout: experience
-title: "Curricular Internship"
+title: "Intern (Curricular)"
 employer: "University of Parma"
 where: "Parma, Italy"
 desc: "Studied and optimized C++ code for hydrodynamic simulation using Intel® Parallel Studio suite."
