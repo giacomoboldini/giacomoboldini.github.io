@@ -23,6 +23,19 @@
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
+% Fix font loading for Windows/XeTeX compatibility
+% The upstream awesome-cv.cls uses HarfBuzz (LuaTeX-only) and complex FontFace configs
+% This override loads the fonts directly from Windows font directory
+\AtBeginDocument{%
+  \setmainfont[Path=/WINDOWS/fonts/,Extension=.ttf,ItalicFont=SourceSans3-Italic,BoldFont=SourceSans3-Bold,BoldItalicFont=SourceSans3-BoldItalic]{SourceSans3-Regular}
+  \setsansfont[Path=/WINDOWS/fonts/,Extension=.ttf,ItalicFont=SourceSans3-Italic,BoldFont=SourceSans3-Bold,BoldItalicFont=SourceSans3-BoldItalic]{SourceSans3-Regular}
+  \renewcommand*{\roboto}{%
+    \fontfamily{Roboto}\selectfont
+  }
+  \newfontfamily\robotoalt[Path=/WINDOWS/fonts/,Extension=.ttf,ItalicFont=Roboto-Italic,BoldFont=Roboto-Bold,BoldItalicFont=Roboto-BoldItalic]{Roboto-Regular}
+  \let\roboto\robotoalt
+}
+
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
