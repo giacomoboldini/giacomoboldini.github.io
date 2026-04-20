@@ -60,6 +60,63 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+% Link visibility toggles for printed CVs
+\newif\ifbodylinks  
+\newif\ifheaderlinks  
+\bodylinksfalse  % do not show links in body
+% \bodylinkstrue  % show links in body
+\headerlinksfalse  % do not show links in header
+%\headerlinkstrue  % show links in header
+
+% Signature-space toggle after privacy notice
+\newif\ifsignature  
+\signaturefalse  % do not show signature space
+%\signaturetrue  % show signature space
+
+% Internal flag used to understand whether we are rendering the header
+\newif\ifcvinheader
+\cvinheaderfalse
+
+% Improve automatic line breaks for long printed URLs.
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\/\do\-\do\_\do\.\do\?\do\&\do\#\do\=\do\:\do\%}
+\makeatother
+\newcommand{\cvprinturl}[1]{%
+  \begingroup
+  \Urlmuskip=0mu plus 2mu\relax
+  \nolinkurl{#1}%
+  \endgroup
+}
+
+\let\cvoldhref\href
+\renewcommand{\href}[2]{%
+  \cvoldhref{#1}{#2}%
+  \ifcvinheader
+    \ifheaderlinks\hspace{0pt}\ {\footnotesize(\cvprinturl{#1})}\fi%
+  \else
+    \ifbodylinks\hspace{0pt}\ {\footnotesize(\cvprinturl{#1})}\fi%
+  \fi
+}
+
+% Language selector for section files: set to en or it
+\providecommand{\cvlang}{en}
+
+\newcommand{\cvsignaturelabel}{Signature}
+\newcommand{\cvprivacynotice}{%
+I authorize the processing of my personal data contained in this CV 
+pursuant to Article 13 of Legislative Decree No. 196/2003 ("Personal Data Protection Code")
+and Article 13 of GDPR 679/16 ("General Data Protection Regulation").%
+}
+
+\ifdefstring{\cvlang}{it}{
+  \renewcommand{\cvsignaturelabel}{Firma}
+  \renewcommand{\cvprivacynotice}{%
+  Autorizzo il trattamento dei dati personali contenuti in questo CV
+  ai sensi dell'articolo 13 del D.Lgs. 196/2003 ("Codice in materia di protezione dei dati personali")
+  e dell'articolo 13 del Regolamento (UE) 2016/679 ("Regolamento generale sulla protezione dei dati").%
+  }
+}{}
+
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
@@ -98,7 +155,9 @@
 
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
+\cvinheadertrue
 \makecvheader[L]
+\cvinheaderfalse
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
@@ -112,13 +171,13 @@
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-\input{sections/about-me.tex}
-\input{sections/education.tex}
-\input{sections/experience.tex}
-\input{sections/skills.tex}
-\input{sections/publications.tex}
-\input{sections/teaching.tex}
-\input{sections/community-activities.tex}
+\input{sections/about-me.\cvlang.tex}
+\input{sections/education.\cvlang.tex}
+\input{sections/experience.\cvlang.tex}
+\input{sections/skills.\cvlang.tex}
+\input{sections/publications.\cvlang.tex}
+\input{sections/teaching.\cvlang.tex}
+\input{sections/community-activities.\cvlang.tex}
 % \input{cv/certificates.tex}
 % \input{cv/presentation.tex}
 % \input{cv/writing.tex}
@@ -126,11 +185,16 @@
 
 \vfill
 \begin{descriptionstyle}{
-I authorize the processing of my personal data contained in this CV 
-pursuant to Article 13 of Legislative Decree No. 196/2003 ("Personal Data Protection Code")
-and Article 13 of GDPR 679/16 ("General Data Protection Regulation").
+\cvprivacynotice
 }
 \end{descriptionstyle}
+\ifsignature
+\vspace{1.2\baselineskip}
+\begin{flushright}
+\rule{6cm}{0.4pt}\\
+{\footnotesize \cvsignaturelabel}
+\end{flushright}
+\fi
 \vspace{\baselineskip}
 
 %-------------------------------------------------------------------------------
