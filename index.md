@@ -123,6 +123,26 @@ projects, exploring embedded systems, and delving into network systems.
         <small>09/2024 – On Going</small><br/>
     </li>
     <br />
+    <!-- Challenges of Software Verification Symposium 2026 -->
+    <li>
+        <span class="fa-li">•</span>
+        <strong>Attendee and Session Chair</strong>, <em>Challenges of Software Verification Symposium 2026 (CSV26)</em><br/>
+        <em>Venice, Italy</em><br/>
+        <small>04/06/2026 – 05/06/2026</small><br/>
+        <ul>
+            <li><a href="https://unive-ssv.github.io/csv.html" target="_blank">CSV26 program link</a></li>
+        </ul>
+    </li>
+    <!-- Static Analysis Symposium 2026 -->
+    <li>
+        <span class="fa-li">•</span>
+        <strong>Committee Member</strong>, <em>Artifact Evaluation for the Static Analysis Symposium (SAS 2026)</em><br/>
+        <em>Remote - Event in Oakland, CA, USA</em><br/>
+        <small>2026</small><br/>
+        <ul>
+            <li><a href="https://conf.researchr.org/committee/splash-issta-2026/sas-2026-sas-artifact-sas-artifact-evaluation-committee" target="_blank">Committee details link</a></li>
+        </ul>
+    </li>
     <!-- Software Language Engineering 2025 -->
     <li>
         <span class="fa-li">•</span>
