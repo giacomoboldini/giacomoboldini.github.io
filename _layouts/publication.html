@@ -71,6 +71,12 @@ Authors: {{ page.authors }}<br/>
         <td><a href="{{ page.confpage }}">Link</a></td>
       </tr>
 {% endif %}
+{% if page.arxiv %}
+      <tr>
+      	<td><i class="fas fa-scroll"></i> arXiv:</td>
+        <td><a href="{{ page.arxiv }}">{% if page.arxivlabel %}{{ page.arxivlabel }}{% else %}Link{% endif %}</a></td>
+      </tr>
+{% endif %}
 {% if page.publishername and page.publisherpage %}
       <tr>
       	<td><i class="fas fa-atlas"></i> {{ page.publishername }} page:</td>
